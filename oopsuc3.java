@@ -8,4 +8,5 @@ public class oopsuc3 {
         System.out.println(String.join(" ", " * * ", " * * ", " * ", "  *   ** "));
         System.out.println(String.join(" ", "  * ", "   * ", "  * ", "   ***"));
     }
+
 }
