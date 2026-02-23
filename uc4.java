@@ -7,7 +7,7 @@ public class uc4 {
         lines[3] = " ** ** ** ****    ** ";
         lines[4] = " ** ** ** **       **";
         lines[5] = " ** ** ** **    **  **";
-        lines[6] = "  ***** * **     **** ";
+        lines[6] = "  ***  ** **     **** ";
 
         for (String line : lines) {
             System.out.println(line);
