@@ -1,0 +1,926 @@
+import java.util.Scanner;
+ 
+public class JavaArrayPractices {
+ 
+    public static void topic1_level1_problem1() {
+        System.out.println("=== Topic 1 | Level 1 | Problem 1: Integer Array Declaration ===");
+ 
+        int[] studentMarks = {85, 92, 78, 95, 88};
+        int arraySize = studentMarks.length;
+ 
+        System.out.println("Student Marks (Total students: " + arraySize + "):");
+        for (int mark : studentMarks) {
+            System.out.println("  Mark: " + mark);
+        }
+        System.out.println();
+    }
+ 
+    public static void topic1_level1_problem2() {
+        System.out.println("=== Topic 1 | Level 1 | Problem 2: String Array Declaration ===");
+ 
+        String[] weekdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+        int totalDays = weekdays.length;
+ 
+        System.out.println("Weekdays (Total: " + totalDays + "):");
+        for (String day : weekdays) {
+            System.out.println("  " + day);
+        }
+        System.out.println();
+    }
+ 
+    public static void topic1_level1_problem3() {
+        System.out.println("=== Topic 1 | Level 1 | Problem 3: Double Array Declaration ===");
+ 
+        double[] dailyTemperatures = {36.5, 37.2, 35.8, 38.1, 36.9};
+        int totalReadings = dailyTemperatures.length;
+ 
+        System.out.println("Daily Temperatures (Total readings: " + totalReadings + "):");
+        for (double temp : dailyTemperatures) {
+            System.out.println("  Temperature: " + temp + " °C");
+        }
+        System.out.println();
+    }
+ 
+    public static void topic1_level1_problem4() {
+        System.out.println("=== Topic 1 | Level 1 | Problem 4: Char Array Declaration ===");
+ 
+        char[] vowels = {'A', 'E', 'I', 'O', 'U'};
+        int totalVowels = vowels.length;
+ 
+        System.out.println("Vowels (Total: " + totalVowels + "):");
+        for (char vowel : vowels) {
+            System.out.println("  Vowel: " + vowel);
+        }
+        System.out.println();
+    }
+ 
+    public static void topic2_level1_problem1() {
+        System.out.println("=== Topic 2 | Level 1 | Problem 1: Create Array with 'new' Keyword ===");
+ 
+        Scanner scanner = new Scanner(System.in);
+        int arraySize = 5;
+        int[] userNumbers = new int[arraySize];
+ 
+        System.out.println("Enter " + arraySize + " integer numbers:");
+        for (int i = 0; i < userNumbers.length; i++) {
+            System.out.print("  Enter number " + (i + 1) + ": ");
+            if (scanner.hasNextInt()) {
+                userNumbers[i] = scanner.nextInt();
+            } else {
+                System.err.println("Error: Invalid input. Expected an integer.");
+                System.exit(1);
+            }
+        }
+ 
+        System.out.println("Numbers you entered:");
+        for (int i = 0; i < userNumbers.length; i++) {
+            System.out.println("  Index " + i + ": " + userNumbers[i]);
+        }
+        System.out.println();
+    }
+ 
+    public static void topic2_level1_problem2() {
+        System.out.println("=== Topic 2 | Level 1 | Problem 2: Create String Array Programmatically ===");
+ 
+        int numberOfMonths = 12;
+        String[] months = new String[numberOfMonths];
+ 
+        months[0] = "January";
+        months[1] = "February";
+        months[2] = "March";
+        months[3] = "April";
+        months[4] = "May";
+        months[5] = "June";
+        months[6] = "July";
+        months[7] = "August";
+        months[8] = "September";
+        months[9] = "October";
+        months[10] = "November";
+        months[11] = "December";
+ 
+        System.out.println("Months of the Year (Total: " + months.length + "):");
+        for (int i = 0; i < months.length; i++) {
+            System.out.println("  Month " + (i + 1) + ": " + months[i]);
+        }
+        System.out.println();
+    }
+ 
+    public static void topic2_level1_problem3() {
+        System.out.println("=== Topic 2 | Level 1 | Problem 3: Create Boolean Array ===");
+ 
+        int totalTasks = 5;
+        boolean[] taskCompleted = new boolean[totalTasks];
+ 
+        taskCompleted[0] = true;
+        taskCompleted[2] = true;
+        taskCompleted[4] = true;
+ 
+        System.out.println("Task Completion Status (Total tasks: " + taskCompleted.length + "):");
+        for (int i = 0; i < taskCompleted.length; i++) {
+            String status = taskCompleted[i] ? "Completed" : "Pending";
+            System.out.println("  Task " + (i + 1) + ": " + status);
+        }
+        System.out.println();
+    }
+ 
+    public static void topic2_level1_problem4() {
+        System.out.println("=== Topic 2 | Level 1 | Problem 4: Dynamic Array Size from User ===");
+ 
+        Scanner scanner = new Scanner(System.in);
+ 
+        System.out.print("Enter the number of students: ");
+ 
+        if (!scanner.hasNextInt()) {
+            System.err.println("Error: Please enter a valid integer for number of students.");
+            System.exit(1);
+        }
+ 
+        int numberOfStudents = scanner.nextInt();
+ 
+        if (numberOfStudents <= 0) {
+            System.err.println("Error: Number of students must be greater than 0.");
+            System.exit(1);
+        }
+ 
+        String[] studentNames = new String[numberOfStudents];
+        scanner.nextLine();
+ 
+        for (int i = 0; i < studentNames.length; i++) {
+            System.out.print("  Enter name of student " + (i + 1) + ": ");
+            studentNames[i] = scanner.nextLine();
+ 
+            if (studentNames[i].trim().isEmpty()) {
+                System.err.println("Error: Student name cannot be empty.");
+                System.exit(1);
+            }
+        }
+ 
+        System.out.println("Student List (Total: " + studentNames.length + "):");
+        for (int i = 0; i < studentNames.length; i++) {
+            System.out.println("  " + (i + 1) + ". " + studentNames[i]);
+        }
+        System.out.println();
+    }
+ 
+    public static void topic3_level1_problem1() {
+        System.out.println("=== Topic 3 | Level 1 | Problem 1: Access Array by Index ===");
+ 
+        String[] cities = {"Delhi", "Mumbai", "Bangalore", "Chennai", "Kolkata"};
+ 
+        String firstCity = cities[0];
+        String thirdCity = cities[2];
+        String lastCity = cities[cities.length - 1];
+ 
+        System.out.println("First city  (index 0): " + firstCity);
+        System.out.println("Third city  (index 2): " + thirdCity);
+        System.out.println("Last city   (index " + (cities.length - 1) + "): " + lastCity);
+        System.out.println();
+    }
+ 
+    public static void topic3_level1_problem2() {
+        System.out.println("=== Topic 3 | Level 1 | Problem 2: Access First and Last Elements ===");
+ 
+        double[] productPrices = {199.99, 349.50, 89.99, 549.00, 129.75};
+ 
+        double firstPrice = productPrices[0];
+        double lastPrice = productPrices[productPrices.length - 1];
+        double priceDifference = firstPrice - lastPrice;
+ 
+        System.out.println("First product price: " + firstPrice);
+        System.out.println("Last product price:  " + lastPrice);
+        System.out.println("Price difference:    " + priceDifference);
+        System.out.println();
+    }
+ 
+    public static void topic3_level1_problem3() {
+        System.out.println("=== Topic 3 | Level 1 | Problem 3: Access by User-Provided Index ===");
+ 
+        Scanner scanner = new Scanner(System.in);
+        String[] colors = {"Red", "Green", "Blue", "Yellow", "Purple"};
+ 
+        System.out.println("Available colors (index 0 to " + (colors.length - 1) + "):");
+        for (int i = 0; i < colors.length; i++) {
+            System.out.println("  [" + i + "] " + colors[i]);
+        }
+ 
+        System.out.print("Enter an index to access: ");
+ 
+        if (!scanner.hasNextInt()) {
+            System.err.println("Error: Please enter a valid integer index.");
+            System.exit(1);
+        }
+ 
+        int userIndex = scanner.nextInt();
+ 
+        if (userIndex < 0 || userIndex >= colors.length) {
+            System.err.println("Error: Index " + userIndex + " is out of bounds. Valid range: 0 to " + (colors.length - 1));
+            System.exit(1);
+        }
+ 
+        String selectedColor = colors[userIndex];
+        System.out.println("Color at index " + userIndex + ": " + selectedColor);
+        System.out.println();
+    }
+ 
+    public static void topic4_level1_problem1() {
+        System.out.println("=== Topic 4 | Level 1 | Problem 1: Standard For Loop ===");
+ 
+        int[] examScores = {78, 92, 85, 64, 97, 73, 88};
+ 
+        System.out.println("Exam Scores:");
+        for (int i = 0; i < examScores.length; i++) {
+            System.out.println("  Student " + (i + 1) + ": " + examScores[i]);
+        }
+        System.out.println();
+    }
+ 
+    public static void topic4_level1_problem2() {
+        System.out.println("=== Topic 4 | Level 1 | Problem 2: Enhanced For Loop - Sum ===");
+ 
+        double[] monthlyExpenses = {1500.50, 2300.75, 1800.00, 2100.25, 1950.80};
+        double totalExpense = 0.0;
+ 
+        for (double expense : monthlyExpenses) {
+            totalExpense += expense;
+        }
+ 
+        System.out.println("Monthly Expenses:");
+        for (int i = 0; i < monthlyExpenses.length; i++) {
+            System.out.println("  Month " + (i + 1) + ": $" + monthlyExpenses[i]);
+        }
+        System.out.println("Total Expense: $" + totalExpense);
+        System.out.println();
+    }
+ 
+    public static void topic4_level1_problem3() {
+        System.out.println("=== Topic 4 | Level 1 | Problem 3: For Loop - Find Maximum ===");
+ 
+        int[] temperatures = {32, 28, 35, 41, 38, 29, 33};
+        int maxTemperature = temperatures[0];
+        int maxIndex = 0;
+ 
+        for (int i = 1; i < temperatures.length; i++) {
+            if (temperatures[i] > maxTemperature) {
+                maxTemperature = temperatures[i];
+                maxIndex = i;
+            }
+        }
+ 
+        System.out.println("Temperatures: ");
+        for (int i = 0; i < temperatures.length; i++) {
+            System.out.println("  Day " + (i + 1) + ": " + temperatures[i] + " °C");
+        }
+        System.out.println("Maximum Temperature: " + maxTemperature + " °C (Day " + (maxIndex + 1) + ")");
+        System.out.println();
+    }
+ 
+    public static void topic4_level1_problem4() {
+        System.out.println("=== Topic 4 | Level 1 | Problem 4: For Loop - Reverse Print ===");
+ 
+        String[] words = {"Java", "is", "a", "powerful", "language"};
+ 
+        System.out.print("Original order: ");
+        for (int i = 0; i < words.length; i++) {
+            System.out.print(words[i] + " ");
+        }
+        System.out.println();
+ 
+        System.out.print("Reverse order:  ");
+        for (int i = words.length - 1; i >= 0; i--) {
+            System.out.print(words[i] + " ");
+        }
+        System.out.println("\n");
+    }
+ 
+    public static void topic5_level1_problem1() {
+        System.out.println("=== Topic 5 | Level 1 | Problem 1: Modify Elements by Index ===");
+ 
+        double[] prices = {25.99, 15.50, 42.00, 33.75, 18.25};
+ 
+        System.out.println("Original Prices:");
+        for (int i = 0; i < prices.length; i++) {
+            System.out.println("  Product " + (i + 1) + ": $" + prices[i]);
+        }
+ 
+        double discountPercent = 10.0;
+        prices[0] = prices[0] - (prices[0] * discountPercent / 100);
+        prices[2] = prices[2] - (prices[2] * discountPercent / 100);
+ 
+        System.out.println("After " + discountPercent + "% discount on Product 1 and 3:");
+        for (int i = 0; i < prices.length; i++) {
+            System.out.println("  Product " + (i + 1) + ": $" + String.format("%.2f", prices[i]));
+        }
+        System.out.println();
+    }
+ 
+    public static void topic5_level1_problem2() {
+        System.out.println("=== Topic 5 | Level 1 | Problem 2: Modify All Elements (Double) ===");
+ 
+        int[] scores = {45, 60, 72, 38, 55};
+ 
+        System.out.println("Original Scores:");
+        for (int i = 0; i < scores.length; i++) {
+            System.out.print("  " + scores[i]);
+        }
+        System.out.println();
+ 
+        int bonusPoints = 5;
+ 
+        for (int i = 0; i < scores.length; i++) {
+            scores[i] = scores[i] + bonusPoints;
+        }
+ 
+        System.out.println("After adding " + bonusPoints + " bonus points:");
+        for (int i = 0; i < scores.length; i++) {
+            System.out.print("  " + scores[i]);
+        }
+        System.out.println("\n");
+    }
+ 
+    public static void topic5_level1_problem3() {
+        System.out.println("=== Topic 5 | Level 1 | Problem 3: Replace Negatives with Zero ===");
+ 
+        int[] dataValues = {12, -5, 8, -3, 20, -1, 15};
+ 
+        System.out.println("Original Values:");
+        for (int i = 0; i < dataValues.length; i++) {
+            System.out.print("  " + dataValues[i]);
+        }
+        System.out.println();
+ 
+        int replacementValue = 0;
+ 
+        for (int i = 0; i < dataValues.length; i++) {
+            if (dataValues[i] < 0) {
+                dataValues[i] = replacementValue;
+            }
+        }
+ 
+        System.out.println("After replacing negatives with " + replacementValue + ":");
+        for (int i = 0; i < dataValues.length; i++) {
+            System.out.print("  " + dataValues[i]);
+        }
+        System.out.println("\n");
+    }
+ 
+    public static void topic6_level1_problem1() {
+        System.out.println("=== Topic 6 | Level 1 | Problem 1: Length Property - Average ===");
+ 
+        double[] testScores = {88.5, 92.0, 76.5, 95.0, 84.5, 90.0};
+        int totalScores = testScores.length;
+ 
+        double sum = 0.0;
+        for (int i = 0; i < totalScores; i++) {
+            sum += testScores[i];
+        }
+ 
+        double average = sum / totalScores;
+ 
+        System.out.println("Total scores: " + totalScores);
+        System.out.println("Sum: " + sum);
+        System.out.println("Average: " + String.format("%.2f", average));
+        System.out.println();
+    }
+ 
+    public static void topic6_level1_problem2() {
+        System.out.println("=== Topic 6 | Level 1 | Problem 2: Length - Safe Last Access ===");
+ 
+        int[] smallArray = {10, 20};
+        int[] mediumArray = {5, 15, 25, 35, 45};
+        int[] largeArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+ 
+        int lastSmall = smallArray[smallArray.length - 1];
+        int lastMedium = mediumArray[mediumArray.length - 1];
+        int lastLarge = largeArray[largeArray.length - 1];
+ 
+        System.out.println("Small array  (size " + smallArray.length + "): last = " + lastSmall);
+        System.out.println("Medium array (size " + mediumArray.length + "): last = " + lastMedium);
+        System.out.println("Large array  (size " + largeArray.length + "): last = " + lastLarge);
+        System.out.println();
+    }
+ 
+    public static void topic6_level1_problem3() {
+        System.out.println("=== Topic 6 | Level 1 | Problem 3: Length - Compare Array Sizes ===");
+ 
+        String[] teamA = {"Alice", "Bob", "Charlie"};
+        String[] teamB = {"Dave", "Eve", "Frank", "Grace", "Hank"};
+ 
+        int sizeA = teamA.length;
+        int sizeB = teamB.length;
+ 
+        System.out.println("Team A size: " + sizeA);
+        System.out.println("Team B size: " + sizeB);
+ 
+        if (sizeA > sizeB) {
+            System.out.println("Team A is larger by " + (sizeA - sizeB) + " member(s).");
+        } else if (sizeB > sizeA) {
+            System.out.println("Team B is larger by " + (sizeB - sizeA) + " member(s).");
+        } else {
+            System.out.println("Both teams are equal in size.");
+        }
+        System.out.println();
+    }
+ 
+    public static void topic7_level2_problem1() {
+        System.out.println("=== Topic 7 | Level 2 | Problem 1: Jagged Multi-Dimensional Array ===");
+ 
+        int[][] jaggedArray = {
+            {1, 2, 3},
+            {4, 5},
+            {6, 7, 8, 9}
+        };
+ 
+        int totalRows = jaggedArray.length;
+ 
+        System.out.println("Jagged Array (Total rows: " + totalRows + "):");
+        for (int i = 0; i < jaggedArray.length; i++) {
+            System.out.print("  Row " + i + " (size " + jaggedArray[i].length + "): ");
+            for (int j = 0; j < jaggedArray[i].length; j++) {
+                System.out.print(jaggedArray[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+ 
+    public static void topic7_level2_problem2() {
+        System.out.println("=== Topic 7 | Level 2 | Problem 2: Student Grades Multi-Dim Array ===");
+ 
+        String[] studentNames = {"Alice", "Bob", "Charlie"};
+        String[] subjectNames = {"Math", "Science", "English"};
+ 
+        int[][] studentGrades = {
+            {85, 92, 78},
+            {90, 88, 95},
+            {72, 80, 85}
+        };
+ 
+        System.out.println("Student Grades Report:");
+        System.out.printf("  %-10s", "Name");
+        for (int j = 0; j < subjectNames.length; j++) {
+            System.out.printf("%-10s", subjectNames[j]);
+        }
+        System.out.println("Average");
+ 
+        for (int i = 0; i < studentGrades.length; i++) {
+            System.out.printf("  %-10s", studentNames[i]);
+            double sum = 0.0;
+            for (int j = 0; j < studentGrades[i].length; j++) {
+                System.out.printf("%-10d", studentGrades[i][j]);
+                sum += studentGrades[i][j];
+            }
+            double average = sum / studentGrades[i].length;
+            System.out.printf("%.2f%n", average);
+        }
+        System.out.println();
+    }
+ 
+    public static void topic7_level2_problem3() {
+        System.out.println("=== Topic 7 | Level 2 | Problem 3: 3D Array - Building Layout ===");
+ 
+        int[][][] buildingLayout = {
+            {
+                {30, 25, 20},
+                {40, 35}
+            },
+            {
+                {50, 45, 40, 35},
+                {30, 25, 20}
+            }
+        };
+ 
+        int totalBuildings = buildingLayout.length;
+ 
+        System.out.println("Building Layout (Total buildings: " + totalBuildings + "):");
+        for (int b = 0; b < buildingLayout.length; b++) {
+            System.out.println("  Building " + (b + 1) + " (Floors: " + buildingLayout[b].length + "):");
+            for (int f = 0; f < buildingLayout[b].length; f++) {
+                System.out.print("    Floor " + f + " (Rooms: " + buildingLayout[b][f].length + "): ");
+                for (int r = 0; r < buildingLayout[b][f].length; r++) {
+                    System.out.print("Room" + r + "=" + buildingLayout[b][f][r] + " ");
+                }
+                System.out.println();
+            }
+        }
+        System.out.println();
+    }
+ 
+    public static void topic8_level2_problem1() {
+        System.out.println("=== Topic 8 | Level 2 | Problem 1: Display a Matrix ===");
+ 
+        int rows = 3;
+        int cols = 3;
+ 
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+ 
+        System.out.println("Matrix (" + rows + "x" + cols + "):");
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.print("  | ");
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.printf("%3d ", matrix[i][j]);
+            }
+            System.out.println("|");
+        }
+        System.out.println();
+    }
+ 
+    public static void topic8_level2_problem2() {
+        System.out.println("=== Topic 8 | Level 2 | Problem 2: Matrix Addition ===");
+ 
+        int[][] matrixA = {
+            {1, 2, 3},
+            {4, 5, 6}
+        };
+ 
+        int[][] matrixB = {
+            {7, 8, 9},
+            {10, 11, 12}
+        };
+ 
+        int rows = matrixA.length;
+        int cols = matrixA[0].length;
+        int[][] resultMatrix = new int[rows][cols];
+ 
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                resultMatrix[i][j] = matrixA[i][j] + matrixB[i][j];
+            }
+        }
+ 
+        System.out.println("Matrix A:");
+        for (int i = 0; i < matrixA.length; i++) {
+            System.out.print("  ");
+            for (int j = 0; j < matrixA[i].length; j++) {
+                System.out.printf("%4d", matrixA[i][j]);
+            }
+            System.out.println();
+        }
+ 
+        System.out.println("Matrix B:");
+        for (int i = 0; i < matrixB.length; i++) {
+            System.out.print("  ");
+            for (int j = 0; j < matrixB[i].length; j++) {
+                System.out.printf("%4d", matrixB[i][j]);
+            }
+            System.out.println();
+        }
+ 
+        System.out.println("Result (A + B):");
+        for (int i = 0; i < resultMatrix.length; i++) {
+            System.out.print("  ");
+            for (int j = 0; j < resultMatrix[i].length; j++) {
+                System.out.printf("%4d", resultMatrix[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+ 
+    public static void topic8_level3_problem1() {
+        System.out.println("=== Topic 8 | Level 3 | Problem 1: Matrix Transpose ===");
+ 
+        int[][] originalMatrix = {
+            {1, 2, 3},
+            {4, 5, 6}
+        };
+ 
+        int originalRows = originalMatrix.length;
+        int originalCols = originalMatrix[0].length;
+        int[][] transposedMatrix = new int[originalCols][originalRows];
+ 
+        for (int i = 0; i < originalRows; i++) {
+            for (int j = 0; j < originalCols; j++) {
+                transposedMatrix[j][i] = originalMatrix[i][j];
+            }
+        }
+ 
+        System.out.println("Original (" + originalRows + "x" + originalCols + "):");
+        for (int i = 0; i < originalMatrix.length; i++) {
+            System.out.print("  ");
+            for (int j = 0; j < originalMatrix[i].length; j++) {
+                System.out.printf("%4d", originalMatrix[i][j]);
+            }
+            System.out.println();
+        }
+ 
+        System.out.println("Transposed (" + originalCols + "x" + originalRows + "):");
+        for (int i = 0; i < transposedMatrix.length; i++) {
+            System.out.print("  ");
+            for (int j = 0; j < transposedMatrix[i].length; j++) {
+                System.out.printf("%4d", transposedMatrix[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+ 
+    public static void topic9_level2_problem1() {
+        System.out.println("=== Topic 9 | Level 2 | Problem 1: Multi-Dim Array Size Analysis ===");
+ 
+        double[][] salesData = {
+            {15000.50, 22000.75, 18000.00, 25000.30},
+            {12000.00, 19000.50, 21000.25, 17000.80},
+            {28000.90, 31000.00, 26000.50, 29000.75}
+        };
+ 
+        String[] regionNames = {"North", "South", "East"};
+ 
+        int totalRegions = salesData.length;
+        int totalQuarters = salesData[0].length;
+ 
+        int totalElements = 0;
+        for (int i = 0; i < salesData.length; i++) {
+            totalElements += salesData[i].length;
+        }
+ 
+        System.out.println("Sales Data Dimensions:");
+        System.out.println("  Total Regions (rows):   " + totalRegions);
+        System.out.println("  Total Quarters (cols):  " + totalQuarters);
+        System.out.println("  Total Data Points:      " + totalElements);
+ 
+        System.out.println("\nDetailed Sales Data:");
+        System.out.printf("  %-10s", "Region");
+        for (int q = 1; q <= totalQuarters; q++) {
+            System.out.printf("%-12s", "Q" + q);
+        }
+        System.out.println("Total");
+ 
+        for (int i = 0; i < salesData.length; i++) {
+            System.out.printf("  %-10s", regionNames[i]);
+            double regionTotal = 0.0;
+            for (int j = 0; j < salesData[i].length; j++) {
+                System.out.printf("$%-11.2f", salesData[i][j]);
+                regionTotal += salesData[i][j];
+            }
+            System.out.printf("$%.2f%n", regionTotal);
+        }
+        System.out.println();
+    }
+ 
+    public static void topic9_level2_problem2() {
+        System.out.println("=== Topic 9 | Level 2 | Problem 2: Find Max/Min in 2D Array ===");
+ 
+        int[][] data = {
+            {34, 72, 13, 89},
+            {56, 12, 90, 45},
+            {67, 23, 78, 41}
+        };
+ 
+        int maxValue = data[0][0];
+        int minValue = data[0][0];
+        int maxRow = 0, maxCol = 0;
+        int minRow = 0, minCol = 0;
+ 
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j < data[i].length; j++) {
+                if (data[i][j] > maxValue) {
+                    maxValue = data[i][j];
+                    maxRow = i;
+                    maxCol = j;
+                }
+                if (data[i][j] < minValue) {
+                    minValue = data[i][j];
+                    minRow = i;
+                    minCol = j;
+                }
+            }
+        }
+ 
+        System.out.println("2D Array:");
+        for (int i = 0; i < data.length; i++) {
+            System.out.print("  ");
+            for (int j = 0; j < data[i].length; j++) {
+                System.out.printf("%5d", data[i][j]);
+            }
+            System.out.println();
+        }
+ 
+        System.out.println("Maximum: " + maxValue + " at position [" + maxRow + "][" + maxCol + "]");
+        System.out.println("Minimum: " + minValue + " at position [" + minRow + "][" + minCol + "]");
+        System.out.println();
+    }
+ 
+    public static void topic9_level3_problem1() {
+        System.out.println("=== Topic 9 | Level 3 | Problem 1: Row-wise and Column-wise Sums ===");
+ 
+        int[][] matrix = {
+            {10, 20, 30},
+            {40, 50, 60},
+            {70, 80, 90}
+        };
+ 
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+ 
+        int[] rowSums = new int[rows];
+        int[] colSums = new int[cols];
+ 
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                rowSums[i] += matrix[i][j];
+                colSums[j] += matrix[i][j];
+            }
+        }
+ 
+        System.out.println("Matrix with Row and Column Sums:");
+        System.out.printf("  %8s", "");
+        for (int j = 0; j < cols; j++) {
+            System.out.printf("Col%-5d", j);
+        }
+        System.out.println("| Row Sum");
+ 
+        for (int i = 0; i < rows; i++) {
+            System.out.printf("  Row %-2d ", i);
+            for (int j = 0; j < cols; j++) {
+                System.out.printf("%-8d", matrix[i][j]);
+            }
+            System.out.println("| " + rowSums[i]);
+        }
+ 
+        System.out.printf("  %-8s", "Col Sum:");
+        for (int j = 0; j < cols; j++) {
+            System.out.printf("%-8d", colSums[j]);
+        }
+        System.out.println();
+        System.out.println();
+    }
+ 
+    public static void topic10_level1_problem1() {
+        System.out.println("=== Topic 10 | Level 1 | Problem 1: System.err and System.exit ===");
+ 
+        Scanner scanner = new Scanner(System.in);
+        String[] fruits = {"Apple", "Banana", "Cherry", "Date", "Elderberry"};
+ 
+        System.out.println("Available Fruits:");
+        for (int i = 0; i < fruits.length; i++) {
+            System.out.println("  [" + i + "] " + fruits[i]);
+        }
+ 
+        System.out.print("Enter index to select a fruit (0-" + (fruits.length - 1) + "): ");
+ 
+        if (!scanner.hasNextInt()) {
+            System.err.println("Error: Input must be a valid integer.");
+            System.exit(1);
+        }
+ 
+        int selectedIndex = scanner.nextInt();
+ 
+        if (selectedIndex < 0 || selectedIndex >= fruits.length) {
+            System.err.println("Error: Index " + selectedIndex + " is out of bounds.");
+            System.err.println("Valid range: 0 to " + (fruits.length - 1));
+            System.exit(2);
+        }
+ 
+        String selectedFruit = fruits[selectedIndex];
+        System.out.println("You selected: " + selectedFruit);
+        System.out.println();
+    }
+ 
+    public static void topic10_level1_problem2() {
+        System.out.println("=== Topic 10 | Level 1 | Problem 2: Multiple Validation Checks ===");
+ 
+        Scanner scanner = new Scanner(System.in);
+ 
+        int maxStudents = 10;
+        int minPassingScore = 0;
+        int maxPassingScore = 100;
+ 
+        System.out.print("Enter number of students (1-" + maxStudents + "): ");
+ 
+        if (!scanner.hasNextInt()) {
+            System.err.println("Error: Please enter a valid integer.");
+            System.exit(1);
+        }
+ 
+        int studentCount = scanner.nextInt();
+ 
+        if (studentCount <= 0 || studentCount > maxStudents) {
+            System.err.println("Error: Student count must be between 1 and " + maxStudents + ".");
+            System.exit(2);
+        }
+ 
+        int[] scores = new int[studentCount];
+ 
+        for (int i = 0; i < scores.length; i++) {
+            System.out.print("  Enter score for student " + (i + 1) + " (" + minPassingScore + "-" + maxPassingScore + "): ");
+ 
+            if (!scanner.hasNextInt()) {
+                System.err.println("Error: Score must be a valid integer.");
+                System.exit(3);
+            }
+ 
+            scores[i] = scanner.nextInt();
+ 
+            if (scores[i] < minPassingScore || scores[i] > maxPassingScore) {
+                System.err.println("Error: Score " + scores[i] + " is out of valid range (" + minPassingScore + "-" + maxPassingScore + ").");
+                System.exit(4);
+            }
+        }
+ 
+        System.out.println("All scores validated successfully!");
+        System.out.println("Scores entered:");
+        for (int i = 0; i < scores.length; i++) {
+            System.out.println("  Student " + (i + 1) + ": " + scores[i]);
+        }
+ 
+        System.out.println("Program completed successfully (Exit code: 0).");
+        System.out.println();
+    }
+ 
+    public static void topic10_level1_problem3() {
+        System.out.println("=== Topic 10 | Level 1 | Problem 3: Exit Codes for Error Types ===");
+ 
+        Scanner scanner = new Scanner(System.in);
+        String[] validOperations = {"ADD", "REMOVE", "VIEW", "EXIT"};
+ 
+        System.out.println("Available Operations:");
+        for (int i = 0; i < validOperations.length; i++) {
+            System.out.println("  " + (i + 1) + ". " + validOperations[i]);
+        }
+ 
+        System.out.print("Enter operation number (1-" + validOperations.length + "): ");
+ 
+        if (!scanner.hasNextInt()) {
+            System.err.println("FATAL: Input is not a number. Exit code: 100");
+            System.exit(100);
+        }
+ 
+        int operationNumber = scanner.nextInt();
+ 
+        if (operationNumber < 1 || operationNumber > validOperations.length) {
+            System.err.println("FATAL: Operation " + operationNumber + " does not exist. Exit code: 101");
+            System.exit(101);
+        }
+ 
+        String selectedOperation = validOperations[operationNumber - 1];
+ 
+        if (selectedOperation.equals("EXIT")) {
+            System.out.println("User requested exit. Terminating gracefully.");
+            System.exit(0);
+        }
+ 
+        System.out.println("Selected operation: " + selectedOperation);
+        System.out.println("Operation executed successfully.");
+        System.out.println();
+    }
+ 
+    public static void main(String[] args) {
+ 
+        System.out.println("╔══════════════════════════════════════════════════════════╗");
+        System.out.println("║       JAVA ARRAY PRACTICES - Level 1, 2 & 3            ║");
+        System.out.println("║       Covering All 10 Topics                            ║");
+        System.out.println("╚══════════════════════════════════════════════════════════╝");
+        System.out.println();
+ 
+        topic1_level1_problem1();
+        topic1_level1_problem2();
+        topic1_level1_problem3();
+        topic1_level1_problem4();
+ 
+        topic2_level1_problem1();
+        topic2_level1_problem2();
+        topic2_level1_problem3();
+        topic2_level1_problem4();
+ 
+        topic3_level1_problem1();
+        topic3_level1_problem2();
+        topic3_level1_problem3();
+ 
+        topic4_level1_problem1();
+        topic4_level1_problem2();
+        topic4_level1_problem3();
+        topic4_level1_problem4();
+ 
+        topic5_level1_problem1();
+        topic5_level1_problem2();
+        topic5_level1_problem3();
+ 
+        topic6_level1_problem1();
+        topic6_level1_problem2();
+        topic6_level1_problem3();
+ 
+        topic7_level2_problem1();
+        topic7_level2_problem2();
+        topic7_level2_problem3();
+ 
+        topic8_level2_problem1();
+        topic8_level2_problem2();
+        topic8_level3_problem1();
+ 
+        topic9_level2_problem1();
+        topic9_level2_problem2();
+        topic9_level3_problem1();
+ 
+        topic10_level1_problem1();
+        topic10_level1_problem2();
+        topic10_level1_problem3();
+ 
+        System.out.println("╔══════════════════════════════════════════════════════════╗");
+        System.out.println("║       ALL PRACTICES COMPLETED SUCCESSFULLY              ║");
+        System.out.println("╚══════════════════════════════════════════════════════════╝");
+    }
+}
