@@ -1,0 +1,18 @@
+public class HelloApp {
+    public static void main(String[] args) {
+        if (args.length > 0) {
+            String delimiter = ", ";
+            String namesList = "";
+ 
+            for (String name : args) {
+                namesList = namesList + name + delimiter;
+            }
+ 
+            namesList = namesList.substring(0, namesList.length() - delimiter.length());
+ 
+            System.out.println("Hello, " + namesList + "!");
+        } else {
+            System.out.println("Hello, World!");
+        }
+    }
+}
